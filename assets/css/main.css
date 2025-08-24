@@ -4109,3 +4109,152 @@ input, select, textarea {
 					}
 
 	}
+
+	/* Size the logo image to sit inside the 3.5em header comfortably */
+#header #logo img {
+  display: block;
+  height: 4.5em;   /* 2.25–2.5em usually looks right */
+  width: auto;
+  margin: 0.6em 0;  /* centers it within the 3.5em line-height */
+}
+
+@media screen and (max-width: 736px) {
+  #header #logo img { height: 2em; }
+}
+
+/* Remove the default tile background/frame for small thumbs */
+.image.thumb170 {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0;               /* some variants add padding */
+}
+
+/* Some Landed builds add a pseudo-element frame */
+.image.thumb170:before,
+.image.thumb170:after {
+  display: none !important;
+}
+
+/* Keep your round crop */
+.thumb170.circle img {
+  border-radius: 0%;
+}
+
+/* When the image is floated right, right-align the following h3 only */
+.mv-block .image.right ~ h3 { text-align: right; }
+
+/* Why Work with Us — clean 3-card grid */
+.why2 { margin-top: 2.5rem; }
+.why2 { clear: both; }
+.why2 .major { text-align: center; }
+.why2 .major:after { margin-left: auto; margin-right: auto; } /* centers the pink underline */
+
+.why2__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 980px) {
+  .why2__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.why2__card {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1.4rem;
+  text-align: center;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.15),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why2__card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.2),
+    inset 0 1px 0 rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.28);
+}
+
+.why2__icon {
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.25rem;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: .6rem;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.25);
+}
+.why2__icon::before { color: #fff; } /* white icon glyph */
+
+.why2__title {
+  margin: .2rem 0 .4rem;
+  font-weight: 600;
+}
+
+.why2__card p {
+  margin: 0;
+  opacity: .9;
+  line-height: 1.6;
+}
+
+.mv-block::after { content: ""; display: table; clear: both; }
+
+/* ——— Visual chips for key points ——— */
+.chips {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .9rem;
+  margin-top: 1rem;
+}
+@media screen and (min-width: 980px) { .chips { grid-template-columns: 1fr 1fr; } }
+
+.chip {
+  display: flex;
+  align-items: flex-start;
+  gap: .8rem;
+  padding: .85rem 1rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.chip__icon {
+  width: 2.25rem; height: 2.25rem; line-height: 2.25rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.22);
+  text-align: center;
+  flex: 0 0 auto;
+}
+.chip__icon::before { color: #fff; }
+.chip strong { display: block; }
+
+/* ——— Round thumbnails for cards ——— */
+.thumb88 {
+  width: 88px; height: 88px; border-radius: 50%;
+  overflow: hidden; margin-bottom: .65rem;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.15);
+}
+.thumb88 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Tighten card body + mini lists */
+.offer-card ul {
+  margin: .5rem 0 0;
+  padding-left: 1.1rem;
+  text-align: left;
+  opacity: .92;
+}
+.offer-card ul li { margin: .25rem 0; }
+
+/* CTA band polish */
+.cta-band .actions .button { margin-left: .4rem; margin-right: .4rem; }
+
