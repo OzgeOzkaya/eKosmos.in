@@ -4258,3 +4258,44 @@ input, select, textarea {
 /* CTA band polish */
 .cta-band .actions .button { margin-left: .4rem; margin-right: .4rem; }
 
+/* — Banner logosu: overlay ve koyu daireyi kapat, ölçüyü sabitle — */
+#banner .content .image {
+  /* banner’daki .image kutusunu temizle */
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+
+  /* ölçü ve yerleşim (tema default 18em’di, biraz daha dengeli) */
+  width: 16em !important;
+  height: 16em !important;
+  margin-left: 2.5em !important;
+  vertical-align: middle;
+
+  /* daire istemezsen 0 yap: */
+  border-radius: 50% !important; /* 0 = dairesiz */
+}
+
+/* HTML5 UP'nin .image overlay’ini tamamen kapat */
+#banner .content .image:before {
+  display: none !important;
+}
+
+/* PNG logonun kendisi tam şeffaf görünsün; çerçeve/maske olmasın */
+#banner .content .image img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  border-radius: inherit !important; /* dairesiz istiyorsan 0 yap */
+}
+
+/* Mobilde logo ve metni alt alta, daha küçük göster */
+@media screen and (max-width: 980px) {
+  #banner .content { text-align: center !important; }
+  #banner .content .image {
+    margin: 1.25em auto 0 !important;
+    width: 9em !important;
+    height: 9em !important;
+  }
+}
